@@ -23,6 +23,7 @@ defmodule PentoWeb.WrongLive do
     <h1>Your score: <%= @score %></h1>
     <h2>
       <%= @message %>
+      It's <%= time() %>
     </h2>
     <h2>
       <%= for n <- 1..10 do%>
@@ -32,6 +33,10 @@ defmodule PentoWeb.WrongLive do
       <% end %>
     </h2>
     """
+  end
+
+  def time() do
+    DateTime.utc_now |> to_string
   end
 
 end
